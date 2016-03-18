@@ -40,4 +40,4 @@ I'm using FreeSMUG Sourceforge RSS to get the latest version from them, mounting
 
 The script is intended and only intended to be used on Mac OS X Snow Leopard (10.6.x) and up. Feel free to send any patch or pull request if you want to contribute enhancements.
 
-2016-03-18, 3vincent: I wanted to have a simple way to update FreeSmug-Chromium under OS X to the newest version, since neither the Chromium Plug-In nor the Sparkle Update Kit still work. 
+2016-03-18, 3vincent: I wanted to have a simple way to update FreeSmug-Chromium under OS X to the newest version, since neither the Chromium Plug-In nor the Sparkle Update Kit still work. I updated this script to make it work again, by adding the SSL/TLS Path to sourceforge (https://...) – Please look at the list of Contributers! I did not do anything valuable to make this script work the way it does, only added one character "s". 
