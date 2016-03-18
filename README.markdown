@@ -39,3 +39,5 @@ I was using [n1k0/chromium-updater](https://github.com/n1k0/chromium-updater) be
 I'm using FreeSMUG Sourceforge RSS to get the latest version from them, mounting the archive and copying everything in place. You can sure change the destination path from the script.
 
 The script is intended and only intended to be used on Mac OS X Snow Leopard (10.6.x) and up. Feel free to send any patch or pull request if you want to contribute enhancements.
+
+2016-03-18, 3vincent: I wanted to have a simple way to update FreeSmug-Chromium under OS X to the newest version, since neither the Chromium Plug-In nor the Sparkle Update Kit still work. 
