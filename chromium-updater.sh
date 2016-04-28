@@ -11,7 +11,7 @@ die() {
     exit 1
 }
 
-W="$(whoami)"
+W="$(echo $USER)"  # was whoami, which is deprecated
 TMP="${TMPDIR-/tmp}"
 DOWNLOAD_URL="$(curl 'https://sourceforge.net/projects/osxportableapps/rss?path=/Chromium' 2> /dev/null | grep 'guid' | head -1 | sed -e 's/      <guid>\(.*\)<\/guid>/\1/')" || die 'Unable to fetch download URL'
 ARCHIVE_NAME="$(echo $DOWNLOAD_URL | cut -d '_' -f 3 | cut -d '/' -f 1 )"
@@ -37,7 +37,11 @@ fi
 
 # Checking if latest available build version number is newer than installed one
 if (( "$VERSION_LATEST_d" <= "$VERSION_INSTALLED_d" )); then
-  die 'You already have the latest build (%s) installed' "$VERSION_LATEST"
+  die '👍  You already have the latest build (%s) installed' "$VERSION_LATEST"
+else
+ if [ $1 = "-d" ]; then
+ 	 osascript -e 'display notification "Run $ chromium-update to install it manually." with title "Chromium Updater FreeSMUG" subtitle "A new Version of Chromium is available." sound name "Basso"'
+ fi
 fi
 
 # Testing if Chromium is currently running
@@ -69,6 +73,10 @@ done
 hdiutil detach -quiet $MOUNTPOINT
 
 printf "\n👍  Lastest Chromium Stable Build from FreeSMUG installed\n"
+
+if [ $1 = "-d" ]; then
+	osascript -e 'display notification "A new Version of Chromium FreeSMUG was installed." with title "Chromium Updater"'
+fi
 
 # Cleaning
 rm "${TMP}/chromium.dmg"
