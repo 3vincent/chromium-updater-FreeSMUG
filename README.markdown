@@ -38,9 +38,11 @@ Run the script with the switch `-d` in a cronjob or LaunchAgent.
     
     
 When an update is found:
-    1. When Chromium is running: the script will send a Message via OS X Notification Center, telling you to install the update manually by running `$ chromium-update`. You could also quit Chromium and wait for the daemon to re-run. But depending on the schedule you set, this could take some time. 
+    **1. When Chromium is running**
+    The script will send a Message via OS X Notification Center, telling you to install the update manually by running `$ chromium-update`. You could also quit Chromium and wait for the daemon to re-run. But depending on the schedule you set, this could take some time. 
     
-    2. When Chromium is not running: the script will install the new version of Chromium in the background, and send a message via Notification Center when the installation is done. 
+    **2. When Chromium is not running**
+    The script will install the new version of Chromium in the background, and send a message via Notification Center when the installation is done. 
     
 I run the daemon as a cronjob in crontab every 2 hours:
 
