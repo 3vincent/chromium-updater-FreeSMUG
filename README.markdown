@@ -10,22 +10,22 @@ While Chrome offers built-in automatic updates, Chromium.app strangely doesn't: 
 Installation
 ------------
 
-I suggest installation to be done in `/usr/local` directory.
+I suggest to install the script just via download as zip from github. 
+You can then copy it where ever you want e.g. under `/usr/local/` or `/Users/$USER/scripts/` 
+Then you can just link the script 
 
-    $ cd /usr/local
-    $ git clone git://github.com/mkody/chromium-updater-FreeSMUG.git getchromium
-    $ ln -s /usr/local/getchromium/getchromium.sh /usr/local/bin/getchromium
+    $ ln -s /Users/$USER/scripts/chromium-updater-freesmug.sh /usr/local/bin/chromium-update
 
 Last, don't forget to add the execution bit to the script:
 
-    $ chmod +x /usr/local/getchromium/getchromium.sh
+    $ chmod +x /Users/$USER/scripts/chromium-updater-freesmug.sh
 
 Usage
 -----
 
 Run it that way:
 
-    $ getchromium
+    $ chromium-update
 
 **CAUTION**: The script will replace your previous installation of `Chromium.app`. Make backups if you're paranoid. Anyway, your profile will ever be safe because it's stored elsewhere on the system.
 
