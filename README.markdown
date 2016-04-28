@@ -44,10 +44,12 @@ The script will send a Message via OS X Notification Center, telling you to inst
     
 **2. When Chromium is not running**  
 The script will install the new version of Chromium in the background, and send a message via Notification Center when the installation is done. 
-    
-I run the daemon as a cronjob in crontab every 2 hours:
 
-    0 */2 * * * /Users/$USER/scripte/chromium-updater.sh
+    
+**Run the daemon as a cronjob in crontab every 2 hours**  
+In crontab (user):
+
+    0 */2 * * * /Users/$USER/scripte/chromium-updater.sh -d
 
 
 Notes
