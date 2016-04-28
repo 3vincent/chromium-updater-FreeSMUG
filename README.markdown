@@ -14,11 +14,11 @@ I suggest to install the script just via download as zip from github.
 You can then copy it where ever you want e.g. under `/usr/local/` or `/Users/$USER/scripts/` 
 Then you can just link the script 
 
-    $ ln -s /Users/$USER/scripts/chromium-updater-freesmug.sh /usr/local/bin/chromium-update
+    $ ln -s /Users/$USER/scripts/chromium-updater.sh /usr/local/bin/chromium-update
 
 Last, don't forget to add the execution bit to the script:
 
-    $ chmod +x /Users/$USER/scripts/chromium-updater-freesmug.sh
+    $ chmod +x /Users/$USER/scripts/chromium-updater.sh
 
 Usage
 -----
@@ -28,6 +28,24 @@ Run it that way:
     $ chromium-update
 
 **CAUTION**: The script will replace your previous installation of `Chromium.app`. Make backups if you're paranoid. Anyway, your profile will ever be safe because it's stored elsewhere on the system.
+
+Run as Daemon
+-------------
+
+Run the script with the switch `-d` in a cronjob or LaunchAgent. 
+
+    $ chromium-update -d
+    
+    
+When an update is found:
+    1. When Chromium is running: the script will send a Message via OS X Notification Center, telling you to install the update manually by running `$ chromium-update`. You could also quit Chromium and wait for the daemon to re-run. But depending on the schedule you set, this could take some time. 
+    
+    2. When Chromium is not running: the script will install the new version of Chromium in the background, and send a message via Notification Center when the installation is done. 
+    
+I run the daemon as a cronjob in crontab every 2 hours:
+
+    0 */2 * * * /Users/$USER/scripte/chromium-updater.sh
+
 
 Notes
 -----
