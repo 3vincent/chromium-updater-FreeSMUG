@@ -39,7 +39,7 @@ fi
 if (( "$VERSION_LATEST_d" <= "$VERSION_INSTALLED_d" )); then
   die '👍  You already have the latest build (%s) installed' "$VERSION_LATEST"
 else
- if [ $1 = "-d" ]; then
+ if [ "$1" = "-d" ]; then
  	 osascript -e 'display notification "Run $ chromium-update to install it manually." with title "Chromium Updater FreeSMUG" subtitle "A new Version of Chromium is available." sound name "Basso"'
  fi
 fi
@@ -74,7 +74,7 @@ hdiutil detach -quiet $MOUNTPOINT
 
 printf "\n👍  Lastest Chromium Stable Build from FreeSMUG installed\n"
 
-if [ $1 = "-d" ]; then
+if [ "$1" = "-d" ]; then
 	osascript -e 'display notification "A new Version of Chromium FreeSMUG was installed." with title "Chromium Updater"'
 fi
 
